@@ -31,7 +31,22 @@ export default function home() {
         </View>
       </View>
 
-      
+      <Text style={styles.actionText}>Ações</Text>
+      <TouchableOpacity 
+        style={styles.actionButton}
+        onPress={() => {}}
+        >
+          <Eye />
+          <Text style={styles.actionButtonHide}>ESCONDER NÚMERO</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+        style={styles.actionButton}
+        onPress={() => {}}
+        >
+          <Trash />
+          <Text style={styles.actionButtonDelete}>APAGAR CARTÃO</Text>
+        </TouchableOpacity>
     </View>
   )
 }
