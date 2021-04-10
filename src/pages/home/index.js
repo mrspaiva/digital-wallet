@@ -1,11 +1,18 @@
 import React from 'react';
-import { Image, View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 import { Feather } from '@expo/vector-icons'
 import Trash from '../../../assets/trash'
 import Eye from '../../../assets/eye'
 
 export default function home() {
+  const navigation = useNavigation()
+
+  function navigationToNewCard() {
+    navigation.navigate('NewCard')
+  }
+
   return (
     <View style={styles.container}>
 
@@ -13,7 +20,7 @@ export default function home() {
         <Text style={styles.text}>Cartões</Text>
         <TouchableOpacity 
         style={styles.addCard}
-        onPress={() => {}}
+        onPress={navigationToNewCard}
         >
           <Feather name="plus" size={22} color="#000" />
         </TouchableOpacity>
