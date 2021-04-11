@@ -6,11 +6,19 @@ export default EStyleSheet.create({
   viewCard: {
     height: '12.8rem',
     width: '20.5rem',
-    backgroundColor: 'linear-gradient(249.8deg, rgba(236, 0, 140, 0.8) 80%, rgba(252, 103, 103, 0.8) 80%)',
     borderRadius: 15,
     padding: '1.4rem 1.2rem',
     justifyContent: 'space-between',
-    marginBottom: '3.6rem'
+    marginBottom: '2rem',
+  },
+
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: '12.8rem',
+    borderRadius: 15,
   },
 
   infoCardHeader: {
