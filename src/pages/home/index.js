@@ -3,9 +3,10 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
 import styles from './styles'
+import Card from '../../components/Card'
+import RadioButton from '../../components/RadioButton'
 import Trash from '../../../assets/trash'
 import Eye from '../../../assets/eye'
-import Card from '../../components/Card'
 
 export default function home() {
   const navigation = useNavigation()
@@ -28,6 +29,12 @@ export default function home() {
       </View>
 
       <Card />
+
+      <View style={styles.radioButton}>
+        <RadioButton selected/>
+        <RadioButton />
+        <RadioButton />
+      </View>
 
       <Text style={styles.actionText}>Ações</Text>
       <TouchableOpacity 
