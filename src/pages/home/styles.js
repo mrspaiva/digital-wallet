@@ -20,7 +20,7 @@ export default EStyleSheet.create({
     
   text: {         
     fontSize: '2.5rem',
-    fontWeight: 'bold',
+    fontFamily: 'Raleway_700Bold',
   },
 
   addCard: {
@@ -40,12 +40,17 @@ export default EStyleSheet.create({
     elevation: 13,
   },
 
+  radioButton: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
   
   actionText: {
     fontSize: '1rem',
     fontWeight: 'bold',
     marginBottom: '1.4rem',
-    marginTop: '1.5rem'
+    marginTop: '1.5rem',
+    fontFamily: 'Raleway_700Bold',
   },
   
   actionButton: {
@@ -61,11 +66,13 @@ export default EStyleSheet.create({
   },
 
   actionButtonHide: {
-    marginLeft: '1.4rem'
+    marginLeft: '1.4rem',
+    fontFamily: 'Raleway_700Bold',
   },
 
   actionButtonDelete: {
     marginLeft: '1.4rem',
-    color: '#F21D1D'
+    color: '#F21D1D',
+    fontFamily: 'Raleway_700Bold',
   }
 });
