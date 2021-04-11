@@ -29,7 +29,7 @@ export default EStyleSheet.create({
   infoTextCard: {
     fontSize: '1.2rem',
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'Raleway_700Bold'
   },
 
   infoCardFooter: {
@@ -39,11 +39,12 @@ export default EStyleSheet.create({
   cardName: {
     fontSize: '1rem',
     color: '#fff',
+    fontFamily: 'Raleway_500Medium'
   },
 
   cardNumber: {
     fontSize: '1.2rem',
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'Roboto_700Bold'
   },
 })
