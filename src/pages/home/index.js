@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import styles from './styles'
 import { Feather } from '@expo/vector-icons'
+import styles from './styles'
 import Trash from '../../../assets/trash'
 import Eye from '../../../assets/eye'
+import Card from '../../components/Card'
 
 export default function home() {
   const navigation = useNavigation()
@@ -26,17 +27,7 @@ export default function home() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.viewCard}>
-        <View style={styles.infoCardHeader}>
-          <Text style={styles.infoTextCard}>Nome do cartão</Text>
-          <Text style={styles.infoTextCard}>Bandeira</Text>
-        </View>
-
-        <View style={styles.infoCardFooter}>
-          <Text style={styles.cardName}>Nome Completo</Text>
-          <Text style={styles.cardNumber}>1234 1234 1234 1234</Text>
-        </View>
-      </View>
+      <Card />
 
       <Text style={styles.actionText}>Ações</Text>
       <TouchableOpacity 
