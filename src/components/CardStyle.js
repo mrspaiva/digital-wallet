@@ -9,7 +9,7 @@ export default EStyleSheet.create({
     borderRadius: 15,
     padding: '1.4rem 1.2rem',
     justifyContent: 'space-between',
-    marginBottom: '2rem',
+    marginBottom: '1.5rem',
   },
 
   background: {
