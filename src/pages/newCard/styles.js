@@ -39,7 +39,7 @@ export const styles = EStyleSheet.create({
     borderRadius: 6,
     paddingHorizontal: '1rem',
     marginBottom: '0.6rem',
-    fontFamily: 'Raleway_400Regular'
+    fontFamily: 'Roboto_400Regular'
   },
 
   addButton: {
