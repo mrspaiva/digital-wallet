@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
 import styles from './styles'
@@ -28,10 +28,27 @@ export default function home() {
         </TouchableOpacity>
       </View>
 
-      <Card />
+      <View style={{flexDirection: 'row'}}>
+        <ScrollView 
+        horizontal 
+        showsHorizontalScrollIndicator={false} 
+        decelerationRate={'normal'}
+        snapToInterval={345}
+        snapToAlignment={"center"}>
+          <View style={{marginHorizontal: 10}}>
+            <Card />
+          </View>
+          <View style={{marginHorizontal: 10}}>
+            <Card />
+          </View>
+          <View style={{marginHorizontal: 10}}>
+            <Card />
+          </View>
+        </ScrollView>
+      </View>
 
       <View style={styles.radioButton}>
-        <RadioButton selected/>
+        <RadioButton />
         <RadioButton />
         <RadioButton />
       </View>
@@ -50,7 +67,10 @@ export default function home() {
         onPress={() => {}}
         >
           <Trash />
-          <Text style={styles.actionButtonDelete}>APAGAR CARTÃO</Text>
+          <Text 
+          style={styles.actionButtonDelete}
+          onPress={() => {}}
+          >APAGAR CARTÃO</Text>
         </TouchableOpacity>
     </View>
   )
