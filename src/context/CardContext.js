@@ -12,6 +12,14 @@ export default function CardProvider({children}) {
     setCards([...cards, {id: Math.random().toString()}])
   }
 
+  function deleteCard(id) {
+      const newCard = cards
+      newCard.pop(id)
+  
+      setCards([...newCard])
+
+    // setCards(cards.filter(card => card.id !== id))
+  }
 
   return (
     <CardContext.Provider value={{
