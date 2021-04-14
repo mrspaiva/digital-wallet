@@ -8,7 +8,11 @@ export default function CardProvider({children}) {
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
 
-  
+  function addCard() {
+    setCards([...cards, {id: Math.random().toString()}])
+  }
+
+
   return (
     <CardContext.Provider value={{
       addCard, 
