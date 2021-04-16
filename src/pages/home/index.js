@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
 import styles from './styles'
 import Card from '../../components/Card'
 import RadioButton from '../../components/RadioButton'
+import { CardContext } from '../../context/CardContext'
 import Trash from '../../../assets/trash'
 import Eye from '../../../assets/eye'
 
 export default function home() {
+  const {cards, deleteCard } = useContext(CardContext) 
+  
   const navigation = useNavigation()
-
+  
   function navigationToNewCard() {
     navigation.navigate('NewCard')
   }
@@ -34,16 +37,18 @@ export default function home() {
         showsHorizontalScrollIndicator={false} 
         decelerationRate={'normal'}
         snapToInterval={345}
-        snapToAlignment={"center"}>
-          <View style={{marginHorizontal: 10}}>
-            <Card />
-          </View>
-          <View style={{marginHorizontal: 10}}>
-            <Card />
-          </View>
-          <View style={{marginHorizontal: 10}}>
-            <Card />
-          </View>
+        snapToAlignment={"center"}
+        >
+          {cards.map((card) => (
+            <View 
+            style={{marginHorizontal: 10}}
+            key={card.id}
+            >
+              <Card 
+              {...card}
+              />
+            </View>
+          ))}
         </ScrollView>
       </View>
 
@@ -64,13 +69,10 @@ export default function home() {
 
         <TouchableOpacity 
         style={styles.actionButton}
-        onPress={() => {}}
+        onPress={() => deleteCard(cards)}
         >
           <Trash />
-          <Text 
-          style={styles.actionButtonDelete}
-          onPress={() => {}}
-          >APAGAR CARTÃO</Text>
+          <Text style={styles.actionButtonDelete}>APAGAR CARTÃO</Text>
         </TouchableOpacity>
     </View>
   )
