@@ -6,15 +6,19 @@ const appStack = createStackNavigator()
 
 import Home from './pages/home'
 import NewCard from './pages/newCard'
+import CardProvider from './context/CardContext'
+
 export default function Routes() {
   return (
-    <NavigationContainer>
+    <CardProvider>
+      <NavigationContainer>
 
-      <appStack.Navigator screenOptions={{ headerShown: false }}>
-        <appStack.Screen name="Home" component={Home}/>
-        <appStack.Screen name="NewCard" component={NewCard}/>
-      </appStack.Navigator>
+        <appStack.Navigator screenOptions={{ headerShown: false }}>
+          <appStack.Screen name="Home" component={Home}/>
+          <appStack.Screen name="NewCard" component={NewCard}/>
+        </appStack.Navigator>
 
-    </NavigationContainer>
+      </NavigationContainer>
+    </CardProvider>
   )
 }
