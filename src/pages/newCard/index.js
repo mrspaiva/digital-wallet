@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native'
 import {styles} from './styles';
 import Card from '../../components/Card'
+import { CardContext } from '../../context/CardContext'
 
 
 export default function newCard() {
+  const { 
+    addCard,
+  } = useContext(CardContext)
+  
   const [cardName, setCardName] = useState('')
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
@@ -17,14 +22,18 @@ export default function newCard() {
     navigation.navigate('Home')
   } 
 
+  function addCardHandler() {
+    addCard()
+    navigationToNewCard()
+    setCardName('')
+    setName('')
+    setNumber('')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Adicionar cartão</Text>
-      <Card 
-      cardNameValue={cardName}
-      nameValue={name}
-      numberValue={number}
-      />
+      <Card />
 
       <Text style={styles.label}>NOME DO CARTÃO</Text>
       <TextInput 
@@ -53,8 +62,7 @@ export default function newCard() {
 
       <TouchableOpacity 
       style={styles.addButton}
-      title='submit'
-      onPress={navigationToNewCard}
+      onPress={addCardHandler}
       >
         <Text style={styles.addButtonText}>ADICIONAR</Text>
       </TouchableOpacity>
