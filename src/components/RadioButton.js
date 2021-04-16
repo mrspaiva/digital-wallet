@@ -1,9 +1,11 @@
-import React from 'react';
-import { View } from 'react-native'
+import React, {useState} from 'react';
+import { TouchableOpacity } from 'react-native'
 
-export default function RadioButton(props) {
+export default function RadioButton() {
+  const [select, setSelect] = useState(false)
+
   return (
-      <View style={[{
+      <TouchableOpacity style={[{
         height: 10,
         width: 10,
         borderRadius: 5,
@@ -11,12 +13,14 @@ export default function RadioButton(props) {
         borderColor: '#C4C4C4',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 10,
+        margin: 5,
         marginTop: 0,
-      }]}>
+      }]}
+      onPress={() => setSelect(select => !select)}
+      >
         {
-          props.selected ?
-            <View style={{
+          select ?
+            <TouchableOpacity style={{
               height: 10,
               width: 10,
               borderRadius: 5,
@@ -24,6 +28,6 @@ export default function RadioButton(props) {
             }}/>
             : null
         }
-      </View>
+      </TouchableOpacity>
   );
 }
