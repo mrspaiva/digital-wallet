@@ -5,19 +5,17 @@ export const CardContext = createContext()
 export default function CardProvider({children}) {
   const [cards, setCards] = useState([])
 
-  function addCard() {
+  function addCard(cardName, userFullname, cardNumber) {
     setCards([...cards, {
-      id: Math.random().toString(),
+      cardName,
+      userFullname,
+      cardNumber,
     }])
   }
 
-  function deleteCard(id) {
-      const newCard = cards
-      newCard.pop(id)
-  
+  function deleteCard(cardNumber) {
+      const newCard = cards.filter(card => card.cardNumber !== cardNumber)
       setCards([...newCard])
-
-    // setCards(cards.filter(card => card.id !== id))
   }
 
   return (
