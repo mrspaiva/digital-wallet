@@ -1,9 +1,14 @@
 <h1 align="center"> Carteira Digital - 🚧 Em construção</h1>
 
 <h3>💻 Sobre o projeto</h3>
-<p>O projeto é uma carteira digital fictícia para teste da empresa Proft.Sale.
-   Entre as funcionalidades estão: criar um cartão, apagar e esconder números do cartão.
-</p>
+<p>O projeto é uma carteira digital fictícia onde você pode criar ou apagar um cartão e esconder os números.</p>
+
+
+|                             |                             | 
+| :-------------------------- | :-------------------------: | 
+| ![01](assets/NewCard.png) | ![02](assets/CardHome.png) 
+                          
+
 
 <h3>🔨 Tecnologias</h3>  
 <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
@@ -19,7 +24,7 @@
  
  # Instale todas as dependências
  $ yarn
-      ou
+    ou
  $ npm install
  
  # Rode o app com o Expo
