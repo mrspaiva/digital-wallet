@@ -1,10 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, Text } from "react-native";
 import styles from './CardStyle'
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Card({NomedoCartao, NomeCompleto, NumeroCartao}) {
-
+export default function Card({cardName, userFullname, cardNumber}) {
   return (
     <View style={styles.viewCard}>
       <LinearGradient
@@ -15,17 +14,17 @@ export default function Card({NomedoCartao, NomeCompleto, NumeroCartao}) {
       <View style={styles.infoCardHeader}>
         <Text 
         style={styles.infoTextCard}>
-        {NomedoCartao ? NomedoCartao : 'Nome do Cartão'}
+        {cardName || 'Nome do Cartão'}
         </Text>
         <Text style={styles.infoTextCard}>Bandeira</Text>
       </View>
 
       <View style={styles.infoCardFooter}>
         <Text style={styles.cardName}>
-          {NomeCompleto ? NomeCompleto : 'Nome Completo'}
+          {userFullname || 'Nome Completo'}
         </Text>
         <Text style={styles.cardNumber}>
-          {NumeroCartao ? NumeroCartao : '1234 1234 1234 1234'}
+          {cardNumber || '1234 1234 1234 1234'}
         </Text>
       </View>
     </View>
