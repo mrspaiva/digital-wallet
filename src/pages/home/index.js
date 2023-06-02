@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
@@ -42,7 +42,6 @@ export default function home() {
           {cards.map((card) => (
             <View 
             style={{marginHorizontal: 10}}
-            key={card.id}
             >
               <Card 
               {...card}
@@ -69,7 +68,7 @@ export default function home() {
 
         <TouchableOpacity 
         style={styles.actionButton}
-        onPress={() => deleteCard(cards)}
+        onPress={() => deleteCard(cards.cardNumber)}
         >
           <Trash />
           <Text style={styles.actionButtonDelete}>APAGAR CARTÃO</Text>
