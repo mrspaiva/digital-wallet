@@ -18,16 +18,15 @@ export default function newCard() {
 
   const navigation = useNavigation()
   
-  function navigationToNewCard() {
+  function navigationToHome() {
     navigation.navigate('Home')
   } 
 
   function addCardHandler() {
-    addCard()
-    navigationToNewCard()
-    setCardName('')
-    setName('')
-    setNumber('')
+    if((cardName && name && number) !== '') {
+    addCard(cardName, name, number)
+    navigationToHome()
+    }
   }
 
   return (
