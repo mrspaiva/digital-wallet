@@ -1,4 +1,4 @@
-<h1 align="center"> Carteira Digital - 🚧 Em construção</h1>
+<h1 align="center"> Carteira Digital </h1>
 
 <h3>💻 Sobre o projeto</h3>
 <p>O projeto é uma carteira digital fictícia onde você pode criar ou apagar um cartão e esconder os números.</p>
